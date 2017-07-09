@@ -64,4 +64,4 @@ While a note is selected use keyboard entry for z-/ to set the notes
 pitch in 100 cent (1 semitone) intervals
 
 ### Editor in use
-<video src="demo.mp4"></video>
+<video src="http://nat.io/sequencer/demo.mp4"></video>

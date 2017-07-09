@@ -9,6 +9,8 @@ included LICENSE.
 If you do use this project as a baseline for you own work, I would love
 to see the derived works! Not required but certainly appreciated.
 
+See a live demo at http://nat.io/sequencer/
+
 ## Installation
 No installation needed, its a purely client-side app, you may need to
 run it from a local web-server though as it does use XHR requests and
@@ -29,7 +31,8 @@ Please refer to AUTHORS
 ## How to use it
 This is a pretty bare-bones, and incomplete shell, the goal was to
 demonstrate one approach to achieving this type of interaction and
-display in native ES5 JS ans HTML5
+display in native ES5 JS and HTML5, no third-party libs or frameworks
+were used.
 
 ### Playing the sequence
 Hit 'spacebar'

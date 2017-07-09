@@ -9,10 +9,10 @@
   "ProjectDivision": 16,
   "ProjectBPM": 120,
   "SampleSet": {
-    "ClosedHH":   "assets/samples/TriSamples-808TrapStep/HHClosed1.mp3",
-    "OpenHH":     "assets/samples/TriSamples-808TrapStep/HHOpen1.mp3",
-    "Snare":      "assets/samples/TriSamples-808TrapStep/Snare1.mp3",
-    "Kick":       "assets/samples/TriSamples-808TrapStep/Kick1.mp3"
+    "ClosedHH": "assets/samples/trisamples-808trapstep/hh-closed1.mp3",
+    "OpenHH": "assets/samples/trisamples-808trapstep/hh-open1.mp3",
+    "Snare": "assets/samples/trisamples-808trapstep/snare1.mp3",
+    "Kick": "assets/samples/trisamples-808trapstep/kick1.mp3"
   },
   "Tracks": [
     {
@@ -60,7 +60,11 @@
         "2:1:0",
         "18:1:0",
         "34:1:0",
-        "51:1:0"
+        "51:1:0",
+        "23:1:0",
+        "24:3:0",
+        "27:1:0",
+        "52:6:0"
       ]
     },
     {

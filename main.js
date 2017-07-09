@@ -362,6 +362,16 @@ window.addEventListener('keyup', function(event) {
   //NOTE: Firefox has default navigation actions so these wont work see below for alternatives
   if(event.keyCode === 46){ sequencer.edit.deleteNoteEvent();} // Delete Key
   if(event.keyCode === 8){ sequencer.edit.deleteNoteEvent();}  // Backspace Key (Delete on Mac)
+
+
+  // Alternate Delete and Play keys, mainly for Firefox Browsers
+  if(event.keyCode === 37) { //delete with <- for Firefox
+    sequencer.edit.deleteNoteEvent();
+  }
+  if(event.keyCode === 39) { //play with -> for Firefox
+    sequencer.audio.playSequence(sequencer.project.state.activeProject.Tracks);
+  }
+
 });
 
 /**
@@ -385,13 +395,6 @@ window.addEventListener('keypress', function(event) {
     sequencer.audio.playSequence(sequencer.project.state.activeProject.Tracks);
   }
 
-  // Alternate Delete and Play keys, mainly for Firefox Browsers
-  if(event.keyCode === 37) { //delete with <- for Firefox
-    sequencer.edit.deleteNoteEvent();
-  }
-  if(event.keyCode === 39) { //play with -> for Firefox
-    sequencer.audio.playSequence(sequencer.project.state.activeProject.Tracks);
-  }
 
 });
 

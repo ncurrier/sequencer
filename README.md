@@ -62,3 +62,6 @@ delete key does not work in Firefox (navigates to previous page)
 
 While a note is selected use keyboard entry for z-/ to set the notes
 pitch in 100 cent (1 semitone) intervals
+
+### Editor in use
+<video src="demo.mp4"></video>

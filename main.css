@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee|Open+Sans");
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0; }
+  body seq-project, html seq-project {
+    font-family: arial, helvetica, sans-serif;
+    text-align: center; }
+    body seq-project seq-project-title, html seq-project seq-project-title {
+      display: block;
+      margin: 1px;
+      padding: 2px;
+      font-family: Bungee, Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      text-align: left; }
+    body seq-project seq-project-author, html seq-project seq-project-author {
+      display: block;
+      margin: 1px 0 10px 0;
+      padding: 2px;
+      font-family: "Open Sans", Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      text-align: left; }
+      body seq-project seq-project-author::before, html seq-project seq-project-author::before {
+        content: 'By: '; }
+    body seq-project seq-track, html seq-project seq-track {
+      color: #FFF;
+      display: grid;
+      grid-template-columns: 200px repeat(32, auto);
+      height: 45px;
+      margin-bottom: 2px; }
+      body seq-project seq-track seq-track-label, html seq-project seq-track seq-track-label {
+        grid-row: row 1;
+        font-family: "Open-Sans", Arial, Helvetica, sans-serif;
+        background-color: #3B679E;
+        text-align: right;
+        padding: 14px; }
+      body seq-project seq-track seq-note, html seq-project seq-track seq-note {
+        grid-row: row 1;
+        background-image: url(assets/images/diagonalPattern.svg);
+        background-color: #ce61a2;
+        background-size: 3px;
+        border-bottom: 4px solid #ce0072;
+        border-right: 1px solid #fff;
+        transition: background-size 700ms, background-position 10ms linear;
+        z-index: 20; }
+        body seq-project seq-track seq-note.selected, html seq-project seq-track seq-note.selected {
+          background-color: #7346ce;
+          background-size: 20px;
+          background-position: 500px 0;
+          transition: background-size 700ms, background-position 30s linear; }
+      body seq-project seq-track seq-note-tray, html seq-project seq-track seq-note-tray {
+        grid-row: row 1;
+        background-color: #c9dfff;
+        border-left: 1px solid #F5F5F6;
+        transition: background-color 600ms;
+        z-index: 10; }
+        body seq-project seq-track seq-note-tray:hover, html seq-project seq-track seq-note-tray:hover {
+          background-color: #869eca;
+          transition: background-color 30ms; }
+      body seq-project seq-track seq-note-tray:nth-child(4n+2), html seq-project seq-track seq-note-tray:nth-child(4n+2) {
+        border-left-style: dotted;
+        border-left-width: 2px; }
+      body seq-project seq-track seq-note-tray:nth-child(8n+2), html seq-project seq-track seq-note-tray:nth-child(8n+2) {
+        border-left-style: solid;
+        border-left-width: 2px; }
+      body seq-project seq-track seq-note-tray:nth-child(16n+2), html seq-project seq-track seq-note-tray:nth-child(16n+2) {
+        border-left-style: solid;
+        border-left-width: 3px; }
+
+/*# sourceMappingURL=main.css.map */

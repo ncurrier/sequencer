@@ -419,3 +419,7 @@ window.addEventListener('keypress', function(event) {
 
 });
 
+// touch event to try playback on Mobile
+window.addEventListener('touchend' , function() {
+  sequencer.audio.playSequence(sequencer.project.state.activeProject.Tracks);
+});

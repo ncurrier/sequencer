@@ -1,0 +1,47 @@
+{
+  "ProjectName": "Test Project",
+  "ProjectAuthor": "Nathaniel Currier",
+  "ProjectCreated": "Sat Jul 07 2017 18:00:00 GMT+0800 (+08)",
+  "ProjectUpdated": "Sat Jul 08 2017 22:00:00 GMT+0800 (+08)",
+  "ProjectStatus": "Published",
+  "ProjectDescription": "A test project",
+  "ProjectLength": 4,
+  "ProjectDivision": 16,
+  "ProjectBPM": 120,
+  "SampleSet": {
+    "ClosedHH": "assets/samples/trisamples-808trapstep/hh-closed1.mp3",
+    "OpenHH": "assets/samples/trisamples-808trapstep/hh-open1.mp3",
+    "Snare": "assets/samples/trisamples-808trapstep/snare1.mp3",
+    "Kick": "assets/samples/trisamples-808trapstep/kick1.mp3",
+    "Bass": "assets/samples/trisamples-808trapstep/bass1.mp3"
+  },
+  "Tracks": [
+    {
+      "TrackName": "Closed High Hat",
+      "TrackSample": "ClosedHH",
+      "Events": []
+    },
+    {
+      "TrackName": "Open High Hat",
+      "TrackSample": "OpenHH",
+      "Events": []
+    },
+    {
+      "TrackName": "Snare",
+      "TrackSample": "Snare",
+      "Events": []
+    },
+    {
+      "TrackName": "Kick",
+      "TrackSample": "Kick",
+      "Events": []
+    },
+    {
+      "TrackName": "Bass",
+      "TrackSample": "Bass",
+      "Events": []
+    }
+  ]
+}
+
+

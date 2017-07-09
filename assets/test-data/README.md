@@ -2,4 +2,7 @@
 
 >StartOffset : Duration : Pitch*
 
-_only applies to generated sounds and not loaded audio files (buffers)_
+* pitch adjustment in cents (100 per semitone)
+
+
+TODO: Will probably want to adds per event volume at some point

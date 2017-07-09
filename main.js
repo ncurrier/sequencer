@@ -192,6 +192,8 @@ sequencer.render.notes = function(track, noteEvents) {
   for (i; i < noteEventLength; ++i) {
     var noteData = noteEvents[i].split(':');
     var note = document.createElement('seq-note');
+    var noteContent = document.createTextNode(noteData[2].charAt(0));
+    note.appendChild(noteContent);
     note.style.gridColumnStart = parseInt(noteData[0])+1;
     note.style.gridColumnEnd = parseInt(noteData[0])+parseInt(noteData[1])+1;
     note.noteEvent = noteEvents[i]
@@ -247,6 +249,14 @@ sequencer.edit.setNoteEventLength = function(target,track) {
     sequencer.project.state.activeNote = null;
     sequencer.render.project();
   }
+};
+
+sequencer.edit.setNoteEventPitch = function(target,track, pitch) {
+  var targetEvent = track.trackData.Events.indexOf(target.noteEvent);
+  var event = target.noteEvent.split(':');
+  track.trackData.Events[targetEvent] = event[0] + ':' + event[1] + ':' + pitch;
+  sequencer.project.state.activeNote = null;
+  sequencer.render.project();
 };
 
 /**
@@ -306,11 +316,13 @@ sequencer.audio.playSample = function(sample,preDelay,duration,pitch) {
   var beatLength = utils.math.calculateNoteTime(sequencer.project.state.activeProject.ProjectBPM);
   duration = duration || 1;
   preDelay = preDelay || 0;
+
   // NOTE:  buffersSources can only be played once so make a new one each time
   var playbackBuffer = sequencer.audio.audioContext.createBufferSource();
   var gainNode = sequencer.audio.audioContext.createGain();
 
   playbackBuffer.buffer = sequencer.audio.sampleBuffers[sample];
+  playbackBuffer.detune.value = pitch;
   playbackBuffer.connect(gainNode);
   playbackBuffer.start(sequencer.audio.audioContext.currentTime+(preDelay*beatLength));
   playbackBuffer.stop(sequencer.audio.audioContext.currentTime+((preDelay*beatLength)+(duration*beatLength)));
@@ -380,16 +392,25 @@ window.addEventListener('keyup', function(event) {
 window.addEventListener('keypress', function(event) {
   // !!!NOTE: Period has the keyCode 46 on KeyPress and 190 on KeyUp this is important to pay
   // attention to due to the delete key having 46 as a keyCode on keyUp.
-  if(event.keyCode === 122){ /* do something here */ }    // lowecase z
-  if(event.keyCode === 120){ /* do something here */ }    // lowercase x
-  if(event.keyCode === 99) { /* do something here */ }    // lowercase c
-  if(event.keyCode === 118){ /* do something here */ }    // lowercase v
-  if(event.keyCode === 98) { /* do something here */ }    // lowercase b
-  if(event.keyCode === 110){ /* do something here */ }    // lowercase n
-  if(event.keyCode === 109){ /* do something here */ }    // lowercase m
-  if(event.keyCode === 44) { /* do something here */ }    // ,
-  if(event.keyCode === 46) { /* do something here */ }    // .
-  if(event.keyCode === 47) { /* do something here */ }    // /
+
+  function setPitch(pitch) {
+    if(sequencer.project.state.activeNote !== null && pitch) {
+      console.log('setting pitch');
+      sequencer.edit.setNoteEventPitch(
+          sequencer.project.state.activeNote, sequencer.project.state.activeNote.track, pitch);
+    }
+  }
+
+  if(event.keyCode === 122){ setPitch(100); }    // lowecase z
+  if(event.keyCode === 120){ setPitch(200); }    // lowercase x
+  if(event.keyCode === 99) { setPitch(300); }    // lowercase c
+  if(event.keyCode === 118){ setPitch(400); }    // lowercase v
+  if(event.keyCode === 98) { setPitch(500); }    // lowercase b
+  if(event.keyCode === 110){ setPitch(600); }    // lowercase n
+  if(event.keyCode === 109){ setPitch(800); }    // lowercase m
+  if(event.keyCode === 44) { setPitch(900); }    // ,
+  if(event.keyCode === 46) { setPitch(1000); }   // .
+  if(event.keyCode === 47) { setPitch(1100); }   // /   -- =( 100 cents short of an octave
 
   if(event.keyCode === 32) { //spacebar - trigger playback NOTE: doesn't work in Firefox due to default action
     sequencer.audio.playSequence(sequencer.project.state.activeProject.Tracks);

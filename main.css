@@ -44,12 +44,21 @@ body, html {
         border-bottom: 4px solid #ce0072;
         border-right: 1px solid #fff;
         transition: background-size 700ms, background-position 10ms linear;
-        z-index: 20; }
+        z-index: 20;
+        font-size: 10px;
+        padding-top: 36px;
+        font-weight: 600;
+        color: #ce0072;
+        letter-spacing: -12px;
+        line-height: 1px;
+        user-select: none;
+        text-align: left; }
         body seq-project seq-track seq-note.selected, html seq-project seq-track seq-note.selected {
           background-color: #7346ce;
           background-size: 20px;
           background-position: 500px 0;
-          transition: background-size 700ms, background-position 30s linear; }
+          transition: background-size 700ms, background-position 30s linear;
+          color: white; }
       body seq-project seq-track seq-note-tray, html seq-project seq-track seq-note-tray {
         grid-row: row 1;
         background-color: #c9dfff;

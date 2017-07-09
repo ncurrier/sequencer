@@ -52,11 +52,21 @@ body,html {
         border-right: 1px solid #fff;
         transition: background-size 700ms, background-position 10ms linear;
         z-index: 20;
+        font-size: 10px;
+        padding-top: 36px;
+        font-weight: 600;
+        color: #ce0072;
+        letter-spacing: -12px;
+        line-height: 1px;
+        user-select: none;
+        text-align: left;
+
         &.selected {
           background-color: #7346ce;
           background-size: 20px;
           background-position: 500px 0;
           transition: background-size 700ms, background-position 30s linear;
+          color: white;
         }
       }
       seq-note-tray {

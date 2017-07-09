@@ -35,7 +35,8 @@ display in native ES5 JS and HTML5, no third-party libs or frameworks
 were used.
 
 ### Playing the sequence
-Hit 'spacebar'
+Hit 'spacebar' or 'right-arrow', spacebar doesn't work in Firefox (scrolls
+the page)
 
 ### Creating a new note
 
@@ -54,4 +55,5 @@ further ahead in the time line to set the notes length
 
 ### Deleting a note
 
-While a note is selected, press the delete key.
+While a note is selected, press the 'delete' key or the 'left-arrow'. The
+delete key does not work in Firefox (navigates to previous page)

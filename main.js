@@ -359,6 +359,7 @@ document.addEventListener('DOMContentLoaded',sequencer.init,false);
  * Capture Keyboard Events for NonPrintable Chars (ex. Delete, function keys)
  */
 window.addEventListener('keyup', function(event) {
+  //NOTE: Firefox has default navigation actions so these wont work see below for alternatives
   if(event.keyCode === 46){ sequencer.edit.deleteNoteEvent();} // Delete Key
   if(event.keyCode === 8){ sequencer.edit.deleteNoteEvent();}  // Backspace Key (Delete on Mac)
 });
@@ -380,7 +381,15 @@ window.addEventListener('keypress', function(event) {
   if(event.keyCode === 46) { /* do something here */ }    // .
   if(event.keyCode === 47) { /* do something here */ }    // /
 
-  if(event.keyCode === 32) { //spacebar - trigger playback
+  if(event.keyCode === 32) { //spacebar - trigger playback NOTE: doesn't work in Firefox due to default action
+    sequencer.audio.playSequence(sequencer.project.state.activeProject.Tracks);
+  }
+
+  // Alternate Delete and Play keys, mainly for Firefox Browsers
+  if(event.keyCode === 37) { //delete with <- for Firefox
+    sequencer.edit.deleteNoteEvent();
+  }
+  if(event.keyCode === 39) { //play with -> for Firefox
     sequencer.audio.playSequence(sequencer.project.state.activeProject.Tracks);
   }
 

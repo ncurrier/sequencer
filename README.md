@@ -57,3 +57,8 @@ further ahead in the time line to set the notes length
 
 While a note is selected, press the 'delete' key or the 'left-arrow'. The
 delete key does not work in Firefox (navigates to previous page)
+
+### Setting the Pitch of a note
+
+While a note is selected use keyboard entry for z-/ to set the notes
+pitch in 100 cent (1 semitone) intervals
